@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+  RewriteEngine On
+  #RewriteCond %{SERVER_PORT} 80
+  #RewriteCond %{HTTP_HOST} ^(www\.)?wds\.website
+  #RewriteRule ^(.*)$ https://www.wds.website$1 [R,L]
+  RewriteBase /MVCTest
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule  ^ index.php [QSA,L]
+  #RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
